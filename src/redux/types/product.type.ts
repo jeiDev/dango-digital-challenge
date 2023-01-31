@@ -2,6 +2,7 @@ export interface ItemProductReduxSliceI{
    title: string
    price: number
    image: string
+   favorite?: boolean
    id: number
 }
 

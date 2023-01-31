@@ -10,10 +10,18 @@ export default function Home() {
   return (
     <section>
       <div className="container">
-        <div className="row" style={{ padding: "90px 0"}}>
-          {items.map((item, i) => (
-            <ProductItem key={i} item={item}/>
-          ))}
+        <div className="row" style={{ padding: "90px 0" }}>
+          <div className="col-12">
+
+          </div>
+
+          <div className="col-12">
+            <div className="row">
+              {items.map((item, i) => (
+                <ProductItem key={i} item={item} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

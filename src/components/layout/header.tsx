@@ -10,7 +10,7 @@ import { useSelector } from "react-redux"
 import { RootState } from "@redux/store"
 
 export const Header = ({ }: HeaderPropsI) => {
-    const { cart, favorites } = useSelector((state: RootState) => state.product)
+    const { cart, items } = useSelector((state: RootState) => state.product)
 
     return (
         <header className={style.header}>
@@ -34,7 +34,7 @@ export const Header = ({ }: HeaderPropsI) => {
 
                         <ButtonNav
                             Icon={Heart}
-                            count={{value: favorites.length}}
+                            count={{value: items.filter(i => (i.favorite)).length}}
                         >Favorites</ButtonNav>
 
                         <ButtonNav

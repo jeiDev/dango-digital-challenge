@@ -8,7 +8,7 @@ import Image from "next/image"
 import style from "./ItemProduct.module.css"
 import { useCallback } from "react"
 import { ItemProductReduxSliceI } from "@redux/types/product.type"
-import { cartAddItemReducer, addFavoriteItemReducer } from "@redux/slices/products"
+import { cartAddItemReducer, editProductReducer } from "@redux/slices/products"
 
 const stars = "-".repeat(5).split("")
 
@@ -21,13 +21,13 @@ export const ProductItem = ({ item }: ItemProductPropsI) => {
 
 
     const addFavoriteHandle = useCallback((item: ItemProductReduxSliceI) => {
-        dispatch(addFavoriteItemReducer(item))
+        dispatch(editProductReducer({id: item.id, data: {...item, favorite: !item.favorite}}))
     }, [])
 
     return (
         <div className="col-12 col-md-6 col-lg-4 col-xl-3">
             <div className={style.product}>
-                <div className={style.boxHeart} onClick={() => (addFavoriteHandle(item))}>
+                <div className={`${style.boxHeart} ${item.favorite ? style.boxHeartActive : ""}`} onClick={() => (addFavoriteHandle(item))}>
                     <Heart />
                 </div>
                 <div className={style.boxImage}>

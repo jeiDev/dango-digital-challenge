@@ -4,7 +4,6 @@ import { ProductReduxSliceI } from 'src/redux/types/product.type'
 import productAdd from './addItem.reducer'
 import productEdit from './editItem.reducer'
 import cartAddItem from './addCartItem.reducer'
-import addFavoriteItem from './addFavoriteItem.reducer'
 
 export const initialProductSlice: ProductReduxSliceI = {
     favorites: [],
@@ -26,13 +25,12 @@ export const productSlice = createSlice({
     reducers: {
         editProductReducer: productEdit,
         addProductReducer: productAdd,
-        cartAddItemReducer: cartAddItem,
-        addFavoriteItemReducer: addFavoriteItem
+        cartAddItemReducer: cartAddItem
     }
 })
 
 export const { 
-    addProductReducer, editProductReducer, cartAddItemReducer, addFavoriteItemReducer
+    addProductReducer, editProductReducer, cartAddItemReducer
 } = productSlice.actions;
 
 export default productSlice.reducer;

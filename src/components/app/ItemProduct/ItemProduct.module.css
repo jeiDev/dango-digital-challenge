@@ -106,7 +106,7 @@
 }
 
 .boxShoppingCart{
-    margin-left: 15px;
+    margin-left: 15px; 
     height: 30px;
     width: 30px;
     background-color: var(--bg-secondary);
@@ -116,3 +116,9 @@
     align-items: center;
 }
 
+
+@media only screen and (max-width: 500px) {
+    .boxShoppingCart {
+       display: none;
+    }
+}

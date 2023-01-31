@@ -1,0 +1,89 @@
+.header {
+    background-color: var(--bg-primary);
+    height: 80px;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+}
+
+/****************************************************************
+*** SEARCH
+*****************************************************************/
+.boxSearch {
+    flex: 1 1 auto;
+    padding-left: 60px;
+    display: flex;
+}
+
+.search {
+    display: flex;
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.search>div:first-child>input {
+    background-color: transparent;
+    border: none;
+    padding: 15px 30px;
+    max-width: 200px;
+    width: 100%;
+}
+
+.search>div:first-child>input:focus {
+    outline: none;
+}
+
+.search>div:last-child {
+    background-color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+    .boxSearch {
+        display: none;
+    }
+}
+
+/****************************************************************
+*** MENU
+*****************************************************************/
+.boxMenu {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .boxMenu {
+        flex: 1 1 auto;
+        justify-content: flex-end;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .boxMenu>div {
+        display: none;
+    }
+
+    .boxMenu>div:last-child{
+        display: flex;
+    }
+
+    .boxMenu>div:last-child>div{
+        height: 25px;
+        width: 25px;
+        font-size: 1.1em;
+    }
+
+    .boxMenu>div:last-child span{
+        display: none;
+    }
+}

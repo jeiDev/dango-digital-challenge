@@ -7,8 +7,6 @@ import { ProductItem } from "@components/app/ItemProduct"
 export default function Home() {
   const { items } = useSelector((state: RootState) => state.product)
 
-  console.log({ items })
-
   return (
     <section>
       <div className="container">

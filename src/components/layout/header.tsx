@@ -6,8 +6,11 @@ import ShoppingCard from "@svg/shopping-cart.svg"
 
 import style from "./layout.module.css"
 import { ButtonNav } from "@components/app/ButtonNav"
+import { useSelector } from "react-redux"
+import { RootState } from "@redux/store"
 
 export const Header = ({ }: HeaderPropsI) => {
+    const { cart, favorites } = useSelector((state: RootState) => state.product)
 
     return (
         <header className={style.header}>
@@ -31,11 +34,11 @@ export const Header = ({ }: HeaderPropsI) => {
 
                         <ButtonNav
                             Icon={Heart}
-                            count={{value: 0}}
+                            count={{value: favorites.length}}
                         >Favorites</ButtonNav>
 
                         <ButtonNav
-                            count={{value: 0}}
+                            count={{value: cart.length}}
                             Icon={ShoppingCard}
                         >Cart</ButtonNav>
                     </div>

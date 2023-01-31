@@ -1,0 +1,37 @@
+.row{
+    padding: 90px 0;
+}
+
+.boxUpdate{
+    padding-bottom: 0px;
+    overflow: hidden;
+    height: 0;
+    transition: all ease .4s;
+}
+
+.boxUpdateActive{
+    padding-bottom: 15px;
+    height: 47px;
+}
+
+.boxUpdate input{
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, .3);
+}
+
+.contentUpdate{
+    height: 47px;
+}
+
+.buttonSaveEdit{
+    background-color: var(--bg-secondary);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}

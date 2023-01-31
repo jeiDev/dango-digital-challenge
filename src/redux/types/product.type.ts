@@ -12,6 +12,7 @@ export interface EditProductI{
 }
 
 export interface ProductReduxSliceI{
+    itemEdit?: ItemProductReduxSliceI | null
     items: ItemProductReduxSliceI[]
     favorites: ItemProductReduxSliceI[]
     cart: ItemProductReduxSliceI[]

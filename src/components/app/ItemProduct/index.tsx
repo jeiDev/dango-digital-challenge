@@ -8,7 +8,7 @@ import Image from "next/image"
 import style from "./ItemProduct.module.css"
 import { useCallback } from "react"
 import { ItemProductReduxSliceI } from "@redux/types/product.type"
-import { cartAddItemReducer, editProductReducer } from "@redux/slices/products"
+import { cartAddItemReducer, editProductReducer, updateItemForUpdateReducer } from "@redux/slices/products"
 
 const stars = "-".repeat(5).split("")
 
@@ -19,9 +19,12 @@ export const ProductItem = ({ item }: ItemProductPropsI) => {
         dispatch(cartAddItemReducer(item))
     }, [])
 
-
     const addFavoriteHandle = useCallback((item: ItemProductReduxSliceI) => {
         dispatch(editProductReducer({id: item.id, data: {...item, favorite: !item.favorite}}))
+    }, [])
+
+    const editItemHandle = useCallback((item: ItemProductReduxSliceI) => {
+        dispatch(updateItemForUpdateReducer(item))
     }, [])
 
     return (
@@ -39,7 +42,7 @@ export const ProductItem = ({ item }: ItemProductPropsI) => {
                             Add to card
                             <div className={style.boxShoppingCart}><ShoppingCart /></div>
                         </div>
-                        <div className={style.button}>Edit</div>
+                        <div className={style.button} onClick={() => (editItemHandle(item))}>Edit</div>
                     </div>
                     <div>
                         <h6 className={style.title}>{item.title}</h6>

@@ -72,6 +72,13 @@
     font-size: 1.1em;
 }
 
+.title,
+.price{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 .hover{
     position: absolute;
     background-color: white;

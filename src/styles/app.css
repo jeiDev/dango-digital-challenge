@@ -12,4 +12,17 @@ a{text-decoration: none;}
 body{
     color: white;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+       margin: 0!important;
+       padding: 0!important;
+    }
+
+    .container>.row{
+        width: 100%!important;
+        margin: 0!important;
+    }
 }

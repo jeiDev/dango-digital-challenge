@@ -1,0 +1,118 @@
+.product{
+    border: 1px solid #B6B6B6;
+    border-radius: 20px;
+    margin: 15px 0;
+    box-shadow: -1px 1px 7px rgb(0 0 0 / 30%);
+    height: 320px;
+    color: black;
+    position: relative;
+    padding: 22px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all ease .2s;
+}
+
+.product:hover .hover{
+    display: flex;
+}
+
+.boxImage{
+    height: 180px;
+    display: flex;
+    justify-content: center;
+}
+
+.boxHeart{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #87BCD9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: .6;
+}
+
+.boxHeart:hover{
+    opacity: 1;
+}
+
+.boxHeartActive{
+    opacity: 1;
+}
+
+.boxImage>img{
+    height: 100%;
+    object-fit: contain;
+}
+
+.boxInfo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.boxInfo>div{
+    flex: 1 1 auto;
+}
+
+.title{
+    font-size: 1.1em;
+    color: var(--bg-primary);
+    padding-bottom: 5px;
+}
+
+.price{
+    color: #4A4A4A;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.hover{
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    flex: 1 1 auto;
+    height: 100%;
+    display: none;
+    align-items: flex-end;
+    justify-content: space-between;
+    transition: all ease .2s;
+}
+
+.containStar{
+    display: flex;
+    padding-top: 5px;
+}
+
+.boxStar{
+    margin: 0 5px;
+}
+
+.button{
+    background-color: #87BCD9;
+    font-size: .9em;
+    font-weight: 600;
+    padding: 15px 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    max-height: 20px;
+    cursor: pointer;
+}
+
+.boxShoppingCart{
+    margin-left: 15px;
+    height: 30px;
+    width: 30px;
+    background-color: var(--bg-secondary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

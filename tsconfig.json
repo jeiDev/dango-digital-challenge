@@ -18,7 +18,8 @@
     "paths": {
       "@styles/*": ["./src/styles/*"],
       "@components/*": ["./src/components/*"],
-      "@svg/*": ["./src/components/svg/*"]
+      "@svg/*": ["./src/components/svg/*"],
+      "@redux/*": ["./src/redux/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -39,7 +39,7 @@ export const ProductItem = ({ item }: ItemProductPropsI) => {
                 <div className={style.boxInfo}>
                     <div className={style.hover}>
                         <div className={style.button} onClick={() => addCartHandle(item)}>
-                            Add to card
+                            Add card
                             <div className={style.boxShoppingCart}><ShoppingCart /></div>
                         </div>
                         <div className={style.button} onClick={() => (editItemHandle(item))}>Edit</div>

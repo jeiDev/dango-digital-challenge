@@ -4,16 +4,15 @@
     max-height: 80px;
     display: flex;
     align-items: center;
+    padding: 0 5vw;
 }
 
 .box {
     display: flex;
     align-items: center;
+    flex: 1 1 auto;
 }
 
-/****************************************************************
-*** SEARCH
-*****************************************************************/
 .boxSearch {
     flex: 1 1 auto;
     padding-left: 60px;
@@ -47,21 +46,20 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1000px) {
-    .boxSearch {
-        display: none;
-    }
-}
-
-/****************************************************************
-*** MENU
-*****************************************************************/
 .boxMenu {
     display: flex;
     align-items: center;
 }
 
+.boxMenu>div:last-child{
+    margin-right: 0;
+}
+
 @media only screen and (max-width: 1000px) {
+    .boxSearch {
+        display: none;
+    }
+
     .boxMenu {
         flex: 1 1 auto;
         justify-content: flex-end;
@@ -69,21 +67,11 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .boxMenu>div {
+    .boxMenu>div{
+        margin: 0 10px;
+    }
+    
+    .boxMenu>div>span {
         display: none;
     }
-
-    .boxMenu>div:last-child{
-        display: flex;
-    }
-
-    .boxMenu>div:last-child>div{
-        height: 25px;
-        width: 25px;
-        font-size: 1.1em;
-    }
-
-    .boxMenu>div:last-child span{
-        display: none;
-    }
-}
+} 

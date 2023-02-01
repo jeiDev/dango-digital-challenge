@@ -1,5 +1,4 @@
 import '@styles/app.css'
-import '@styles/grid.css'
 import { NextPage } from 'next'
 import { store } from "@redux/store"
 import { Provider } from "react-redux"

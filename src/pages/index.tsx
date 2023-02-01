@@ -12,13 +12,13 @@ export default function Home() {
   const { items, itemEdit } = useSelector((state: RootState) => state.product)
 
   const changeTitleHandle = useCallback((title: string) => {
-    if(!itemEdit) return
-    dispatch(editProductReducer({id: itemEdit.id, data: {...itemEdit, title}}))
+    if (!itemEdit) return
+    dispatch(editProductReducer({ id: itemEdit.id, data: { ...itemEdit, title } }))
   }, [itemEdit])
 
   const changePriceHandle = useCallback((price: string) => {
-    if(!itemEdit) return
-    dispatch(editProductReducer({id: itemEdit.id, data: {...itemEdit, price: parseFloat(price)}}))
+    if (!itemEdit) return
+    dispatch(editProductReducer({ id: itemEdit.id, data: { ...itemEdit, price: parseFloat(price) } }))
   }, [itemEdit])
 
   const saveHandle = useCallback(() => {
@@ -26,33 +26,22 @@ export default function Home() {
   }, [itemEdit])
 
   return (
-    <section>
-      <div className="container">
-        <div className={`row ${style.row}`}>
-          <div className="col-12">
-            <div className={`${style.boxUpdate} ${itemEdit ? style.boxUpdateActive : ""}`}>
-              <div className={`row ${style.contentUpdate}`}>
-                <div className="col-7">
-                  <input type="text" placeholder="Title" defaultValue={itemEdit?.title} onChange={(e) => changeTitleHandle(e.target.value)}/>
-                </div>
-                <div className="col-3">
-                  <input type="text" placeholder="Price" defaultValue={itemEdit?.price} onChange={(e) => changePriceHandle(e.target.value)}/>
-                </div>
-                <div className="col-2">
-                  <div className={style.buttonSaveEdit} onClick={() => saveHandle()}>Save</div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <section className={style.section}>
 
-          <div className="col-12">
-            <div className="row">
-              {items.map((item, i) => (
-                <ProductItem key={i} item={item} />
-              ))}
-            </div>
-          </div>
+
+      <div className={`${style.boxUpdate} ${itemEdit ? style.boxUpdateActive : ""}`}>
+        <div className={style.contentUpdate}>
+          <input className={style.iTitle} type="text" placeholder="Title" defaultValue={itemEdit?.title} onChange={(e) => changeTitleHandle(e.target.value)} />
+          <input className={style.iPrice} type="text" placeholder="Price" defaultValue={itemEdit?.price} onChange={(e) => changePriceHandle(e.target.value)} />
+          <div className={style.buttonSaveEdit} onClick={() => saveHandle()}>Save</div>
         </div>
+      </div>
+
+
+      <div className={style.boxProducts}>
+        {items.map((item, i) => (
+          <ProductItem key={i} item={item} />
+        ))}
       </div>
     </section>
   )

@@ -1,17 +1,14 @@
-.row{
-    padding: 90px 0;
+.section{
+    padding: 5rem 5vw;
 }
 
 .boxUpdate{
-    padding-bottom: 0px;
-    overflow: hidden;
-    height: 0;
-    transition: all ease .4s;
+    padding-bottom: 15px;
+    display: none;
 }
 
 .boxUpdateActive{
-    padding-bottom: 15px;
-    height: 47px;
+    display: block;
 }
 
 .boxUpdate input{
@@ -23,15 +20,49 @@
 }
 
 .contentUpdate{
-    height: 47px;
+    display: flex;
+}
+
+.iTitle{
+    flex: 1 1 auto;
+}
+
+.iPrice{
+    flex: 1 2 auto;
+    margin-left: 2rem;
 }
 
 .buttonSaveEdit{
     background-color: var(--bg-secondary);
-    height: 100%;
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 2rem;
+    padding: 11px 18px;
+}
+
+.boxProducts{
+    display: grid;
+    gap: 0.2rem 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+}
+
+@media only screen and (max-width: 770px) {
+    .boxProducts{
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    }
+
+    .contentUpdate{
+        flex-direction: column;
+    }
+
+    .iPrice,
+    .iTitle,
+    .buttonSaveEdit{
+        margin-left: 0;
+        margin: 0.3rem 0;
+    }
 }
